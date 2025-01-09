@@ -1,10 +1,7 @@
 import { CalendarDay, Event } from '@/types';
 
 export function getMonthDays(year: number, month: number): CalendarDay[] {
-  const firstDayOfMonth = new Date(year, month, 1);
-  const lastDayOfMonth = new Date(year, month + 1, 0);
-  const daysInMonth = lastDayOfMonth.getDate();
-  
+  const firstDayOfMonth = new Date(year, month, 1);  
   // Get the first day to display (including padding days from previous month)
   const firstDayToDisplay = new Date(firstDayOfMonth);
   firstDayToDisplay.setDate(firstDayToDisplay.getDate() - firstDayOfMonth.getDay());
